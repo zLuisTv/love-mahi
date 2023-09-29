@@ -28,11 +28,11 @@ module.exports = {
       'mobile-l': { 'max': '425px' },
       // => @media (max-width: 425px) { ... }
 
-      'mobile-m': { 'max': '375px' },
-      // => @media (max-width: 375px) { ... }
+      'mobile-m': { 'max': '376px' },
+      // => @media (max-width: 376px) { ... }
 
-      'mobile-s': { 'max': '320px' },
-      // => @media (max-width: 320px) { ... }
+      'mobile-s': { 'max': '321px' },
+      // => @media (max-width: 321px) { ... }
     },
     extend: {
       backgroundImage: {

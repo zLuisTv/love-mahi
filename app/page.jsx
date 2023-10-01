@@ -3,6 +3,7 @@
 import { Averia_Sans_Libre } from 'next/font/google'
 import { Chronometer } from '../components/time'
 import { Galery } from '../components/galery'
+import { MusicPlayer } from '../components/music'
 
 const font_o = Averia_Sans_Libre({
   subsets: ["latin"],
@@ -39,6 +40,12 @@ export default function Home() {
         <div className='w-[100%] pt-10 text-center mobile-s:pt-1 mobile-l:pt-1'>
 
           <Galery />
+
+        </div>
+
+        <div>
+
+          <MusicPlayer />
 
         </div>
 

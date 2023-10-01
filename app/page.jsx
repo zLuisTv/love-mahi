@@ -30,13 +30,13 @@ export default function Home() {
 
       </section>
 
-      <section className='flex flex-col h-[1600px] mt-[42px] px-24 bg-white items-center mobile-s:mt-5 mobile-s:h-[5250px]'>
+      <section className='flex flex-col h-[1600px] mt-[42px] px-24 bg-white items-center mobile-s:mt-5 mobile-s:h-[5250px] mobile-l:h-[5250px] '>
 
         <div className='flex bg-gradient-to-bl to-red-300 via-yellow-200 from-orange-500 w-max p-4 rounded-xl'>
           <p className={`${font_o.className} text-black text-[60px] uppercase mobile-s:text-[20px] mobile-l:text-[25px]`}>Every Photo, an Emotion</p>
         </div>
 
-        <div className='w-[100%] pt-10 text-center mobile-s:pt-1'>
+        <div className='w-[100%] pt-10 text-center mobile-s:pt-1 mobile-l:pt-1'>
 
           <Galery />
 

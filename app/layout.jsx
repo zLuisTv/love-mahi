@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
 
         <nav className='fixed flex z-10 w-full h-[55px] bg-gradient-to-r from-orange-600 from-10% via-orange-300 via-30% to-amber-300 to-70% items-center justify-around mobile-s:h-[52px] mobile-s:w-full mobile-m:h-20 mobile-m:w-full'>
 
-          <div className='flex px-8 gap-5 mobile-s:px-2 mobile-s:gap-2 mobile-s:text-xs mobile-s:text-center mobile-m:text-center mobile-m:px-5 mobile-m:gap-2'>
+          <div className='flex px-8 gap-5 text-center mobile-s:px-2 mobile-s:gap-2 mobile-s:text-xs mobile-s:text-center mobile-m:text-center mobile-m:px-5 mobile-m:gap-2'>
 
             <span>
               I love you 💞
@@ -30,19 +30,19 @@ export default function RootLayout({ children }) {
               You complete me ✨
             </span>
 
-            <span className='mobile-s:hidden'>
+            <span className='mobile-s:hidden mobile-m:hidden mobile-l:hidden'>
               You are my everything 🎇
             </span>
 
-            <span className='mobile-s:hidden mobile-m:hidden'>
+            <span className='mobile-s:hidden mobile-m:hidden mobile-l:hidden'>
               I'm grateful for you 💝
             </span>
 
-            <span className='mobile-s:hidden mobile-m:hidden'>
+            <span className='mobile-s:hidden mobile-m:hidden mobile-l:hidden'>
               You're my dream come true 🌷
             </span>
 
-            <span className='mobile-s:hidden mobile-m:hidden'>
+            <span className='mobile-s:hidden mobile-m:hidden mobile-l:hidden'>
               You mean the world to me 💐
             </span>
 

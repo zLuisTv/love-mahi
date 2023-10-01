@@ -7,22 +7,22 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'max-2xl': { 'max': '1535px' },
+      'max-2xl': { 'max': '1536px' },
       // => @media (max-width: 1535px) { ... }
 
-      'latop-l': { 'max': '1440px' },
+      'latop-l': { 'max': '1441px' },
       // => @media (max-width: 1440px) { ... }
 
-      'max-xl': { 'max': '1280px' },
+      'max-xl': { 'max': '1281px' },
       // => @media (max-width: 1280px) { ... }
 
-      'latop': { 'max': '1024px' },
+      'latop': { 'max': '1025px' },
       // => @media (max-width: 1024px) { ... }
 
-      'tablet': { 'max': '768px' },
+      'tablet': { 'max': '767px' },
       // => @media (max-width: 768px) { ... }
 
-      'max-sm': { 'max': '640px' },
+      'max-sm': { 'max': '641px' },
       // => @media (max-width: 640px) { ... }
 
       'mobile-l': { 'max': '425px' },

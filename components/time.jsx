@@ -9,15 +9,14 @@ let timer;
 
 async function updateCountdown(setDays, setHours, setMinutes, setSeconds) {
     const time = new Date();
-    console.log(time)
-    const month = time.getMonth();
-    const nextMonth = month + 2;
-    let targetMonth = (nextMonth) > 13 ? "01" : (nextMonth);
-    let nextYear = (nextMonth) > 13 ? time.getFullYear() + 1 : time.getFullYear();
+    // console.log(time)
+    // const month = time.getMonth();
+    // const nextMonth = month + 2;
+    // let targetMonth = (nextMonth) > 13 ? "01" : (nextMonth);
+    // let nextYear = (nextMonth) > 13 ? time.getFullYear() + 1 : time.getFullYear();
 
-    const day = new Date(`${nextYear}-${targetMonth}-25T23:59:59`); // Target time
+    const day = new Date(`2023-10-25T00:00:00`); // Target time
     const duration = await day - time;
-
 
     if (duration <= 0) {
         clearInterval(timer);

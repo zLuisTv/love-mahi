@@ -61,6 +61,8 @@ export default function MusicPage() {
         const currentTime = audioPlayer.current?.currentTime;
         setTime(currentTime);
         if (duration) {
+            if(progressBarRef.current.value === null) return;
+
             progressBarRef.current.value = currentTime;
             progressBarRef.current.style.setProperty(
                 "--range-progress",
@@ -223,7 +225,7 @@ export default function MusicPage() {
             )}
             {open ? (
                 <div className="fixed inset-x-0 bottom-0 flex flex-col items-center rounded-t-[50px] border-x border-t border-white bg-white bg-opacity-30 pb-5 backdrop-blur-sm dark:border-none dark:bg-black dark:bg-opacity-70">
-                    <div className="mt-6 h-[5px] w-32 rounded-full bg-black bg-opacity-50 backdrop-blur-sm dark:bg-white dark:bg-opacity-70 md:mt-4"/>
+                    <div className="mt-6 h-[5px] w-32 rounded-full bg-black bg-opacity-50 backdrop-blur-sm dark:bg-white dark:bg-opacity-70 md:mt-4" />
                     <div className="mt-4 mb-4 flex w-full items-center justify-between px-12 md:mt-2">
                         <div className="flex flex-col items-start dark:text-white">
                             <span className="text-left text-xl font-semibold">

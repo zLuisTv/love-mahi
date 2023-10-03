@@ -65,21 +65,21 @@ const data = {
 
 function ImageGrid({ data }) {
     return (
-        <div className='grid grid-cols-4 justify-items-center items-center gap-y-5 pt-5 mobile-s:flex mobile-s:flex-col mobile-l:flex mobile-l:flex-col'>
+        <div className='flex flex-col justify-items-center items-center gap-y-5 pt-5 xl:grid xl:grid-cols-4'> {/*grid grid-cols-4*/}
             {Object.keys(data).map((key) => {
                 const { src, alt, description } = data[key];
                 return (
-                    <div key={key} className='relative h-[445px] group flex items-center justify-center bg-gradient-to-tr from-yellow-200 via-yellow-500 to-orange-800 mobile-s:w-[230px] mobile-s:h-[405px] mobile-l:w-[230px] mobile-l:h-[410px]'>
+                    <div key={key} className='relative h-[445px] group flex items-center justify-center bg-slate-700'>
                         <div className='flex w-[95%] h-auto gap-6'>
                             <Image
-                                className='w-[250px] mobile-s:w-[220px] mobile-l:w-[220px]'
+                                className='w-[250px]'
                                 src={src}
                                 width={200}
                                 height={50}
                                 alt={alt}
                             />
                             <div className='flex absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 text-center hover:cursor-help justify-center '>
-                                <p className='px-6 pt-6 text-2xl mobile-s:text-xl mobile-l:text-xl'>{description}</p>
+                                <p className='px-6 pt-6 text-2xl'>{description}</p>
                             </div>
                         </div>
                     </div>

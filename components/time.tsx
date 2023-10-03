@@ -69,7 +69,7 @@ export function Chronometer() {
                 <p className='uppercase text-center'>Es un día para celebrar y pasarla bien contigo.</p>
             ) : (
                 <div className='flex'>
-                    <p className='text-8xl font-extralight mobile-s:text-[58px] mobile-l:text-[60px]'>{formatValue(span_days)}:{formatValue(span_hours)}:{formatValue(span_minutes)}:{formatValue(span_seconds)}</p>
+                    <p className='text-5xl font-extralight'>{formatValue(span_days)}:{formatValue(span_hours)}:{formatValue(span_minutes)}:{formatValue(span_seconds)}</p>
                 </div>
             )}
         </div>

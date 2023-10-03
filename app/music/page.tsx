@@ -16,8 +16,8 @@ export default function MusicPage() {
         Array<{ title: string, srcMusic: string, imgSrc: string }>
     >([
         {
-            title: "We fall in love in october",
-            srcMusic: "/audio/we fall in love in october.mp3",
+            title: "We fell in love in october",
+            srcMusic: "/audio/We fell in love in october.mp3",
             imgSrc: "/sunshine/img-1.jpg"
         },
         {

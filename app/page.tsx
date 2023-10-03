@@ -4,6 +4,8 @@ import { Averia_Sans_Libre } from 'next/font/google'
 import { Chronometer } from '../components/time'
 import { Galery } from '../components/galery'
 
+import Link from 'next/link'
+
 
 const font_o = Averia_Sans_Libre({
   subsets: ["latin"],
@@ -78,6 +80,17 @@ export default function Home() {
 
           <Galery />
 
+        </div>
+
+        <div className='w-full'>
+
+          <Link
+            href={"/music"}
+          >
+            <div className='w-full p-4 my-2 rounded-xl bg-gray-500 text-center'>
+              <span>Reproductor de Música</span>
+            </div>
+          </Link>
         </div>
 
       </section>

@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "app/layout.tsx", "app/page.tsx", "components/time.tsx", "components/music.jsx"  ],
+, "app/layout.tsx", "app/page.tsx", "components/Time.tsx"  ],
   "exclude": [
     "node_modules"
   ]

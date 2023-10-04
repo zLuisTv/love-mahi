@@ -37,8 +37,8 @@ export default function Controls(item: Iitem) {
     }
   };
   return (
-    <div className="mt-3 flex w-3/5 items-center justify-between">
-      <div className="relative" onClick={() => handleTime("back")}>
+    <div className="mt-3 flex w-3/5 items-center justify-between ">
+      <div className="relative hover:cursor-pointer" onClick={() => handleTime("back")}>
         <svg
           width="20"
           height="20"
@@ -63,6 +63,7 @@ export default function Controls(item: Iitem) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         onClick={() => handleMusic("back")}
+        className="hover:cursor-pointer"
       >
         <path
           d="M25.5221 27.0172L11.3894 17.0484C10.0178 16.0687 10.0178 14.0113 11.3894 13.056L25.5221 3.06275C27.1631 1.93606 29.392 3.08725 29.392 5.07121V25.0088C29.392 26.9927 27.1631 28.1439 25.5221 27.0172ZM4.89866 2.79333V27.2867C4.89866 28.6338 3.79646 29.736 2.44933 29.736C1.1022 29.736 -3.8147e-06 28.6338 -3.8147e-06 27.2867V2.79333C-3.8147e-06 1.44619 1.1022 0.343994 2.44933 0.343994C3.79646 0.343994 4.89866 1.44619 4.89866 2.79333Z"
@@ -73,12 +74,12 @@ export default function Controls(item: Iitem) {
       {item.playPause ? (
         <div
           onClick={item.IsplayMusic}
-          className="box-content h-[36px] w-2 border-x-8 border-x-[#424040] dark:border-x-white "
+          className="box-content h-[36px] w-2 border-x-8 border-x-[#424040] dark:border-x-white hover:cursor-pointer"
         />
       ) : (
         <div
           onClick={item.IsplayMusic}
-          className="box-content h-0 w-0 border-y-[18px] border-l-[25px] border-y-transparent border-l-[#424040] dark:border-l-white"
+          className="box-content h-0 w-0 border-y-[18px] border-l-[25px] border-y-transparent border-l-[#424040] dark:border-l-white hover:cursor-pointer"
         />
       )}
       <svg
@@ -88,6 +89,7 @@ export default function Controls(item: Iitem) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         onClick={() => handleMusic("next")}
+        className="hover:cursor-pointer"
       >
         <path
           d="M4.47795 27.0172L18.6106 17.0484C19.9822 16.0687 19.9822 14.0113 18.6106 13.056L4.47795 3.06275C2.83689 1.93606 0.608002 3.08725 0.608002 5.07121V25.0088C0.608002 26.9927 2.83689 28.1439 4.47795 27.0172ZM25.1013 2.79333V27.2867C25.1013 28.6338 26.2035 29.736 27.5507 29.736C28.8978 29.736 30 28.6338 30 27.2867V2.79333C30 1.44619 28.8978 0.343994 27.5507 0.343994C26.2035 0.343994 25.1013 1.44619 25.1013 2.79333Z"
@@ -95,7 +97,7 @@ export default function Controls(item: Iitem) {
         />
       </svg>
 
-      <div className="relative" onClick={() => handleTime("next")}>
+      <div className="relative hover:cursor-pointer" onClick={() => handleTime("next")}>
         <svg
           width="20"
           height="20"

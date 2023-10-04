@@ -1,8 +1,9 @@
 'use client'
 
-import Controls from "../../components/Controls";
-import ListMusic from "../../components/ListMusic";
-import ProgressBar from "../../components/ProgressBar";
+import React from 'react';
+import Controls from "../../components/Music/Controls";
+import ListMusic from "../../components/Music/ListMusic";
+import ProgressBar from "../../components/Music/ProgressBar";
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from "react";
@@ -11,7 +12,7 @@ const boxVariants = {
     checked: { rotateY: 360 },
 };
 
-export default function MusicPage() {
+const MusicPage: React.FC = () => {
     const [musicList] = useState<
         Array<{ title: string, srcMusic: string, imgSrc: string }>
     >([
@@ -102,7 +103,6 @@ export default function MusicPage() {
         progressBarRef.current.max = seconds;
     };
 
-
     return (
         <div className={`${dark && "dark"}`}>
             <audio
@@ -129,7 +129,7 @@ export default function MusicPage() {
                 className='fixed inset-x-0 top-0 flex flex-col items-center rounded-b-[50px] border-x border-b border-white bg-white bg-opacity-30 pb-8 backdrop-blur-sm dark:bg-black dark:border-none dark:bg-opacity-70 md:pb-4'
             >
                 <div className='flex w-full items-center justify-between px-7 py-2'>
-                    <div className='borderGeradiant flex h-14 w-14 items-center justify-center rounded-full bg-white bg-opacity-50 backdrop-blur-sm'>
+                    <div onClick={() => location.href='/'} className='borderGeradiant flex h-14 w-14 items-center justify-center rounded-full bg-white bg-opacity-50 backdrop-blur-sm hover:cursor-pointer'>
                         <svg
                             width="26"
                             height="26"
@@ -151,7 +151,7 @@ export default function MusicPage() {
 
                     <div
                         onClick={() => setDark(!dark)}
-                        className='borderGeradiant flex h-14 w-14 items-center justify-center rounded-full bg-white bg-opacity-50 backdrop-blur-sm'
+                        className='borderGeradiant flex h-14 w-14 items-center justify-center rounded-full bg-white bg-opacity-50 backdrop-blur-sm hover:cursor-pointer'
                     >
                         <motion.svg
                             initial={false}
@@ -190,7 +190,7 @@ export default function MusicPage() {
                     />
                 )}
 
-                <div onClick={() => setOpen(!open)} className="absolute bottom-2">
+                <div onClick={() => setOpen(!open)} className="absolute bottom-2 hover:cursor-pointer">
                     <motion.svg
                         initial={false}
                         animate={open ? "open" : "close"}
@@ -303,3 +303,5 @@ export default function MusicPage() {
         </div>
     );
 }
+
+export default MusicPage;

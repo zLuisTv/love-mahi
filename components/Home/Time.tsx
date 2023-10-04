@@ -39,7 +39,7 @@ function formatValue(value) {
     return value < 10 ? `0${value}` : value;
 }
 
-export function Chronometer() {
+export default function Chronometer() {
 
     const [span_days, setSpanDays] = useState(null);
     const [span_hours, setSpanHours] = useState(null);

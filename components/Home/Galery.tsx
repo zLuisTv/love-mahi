@@ -79,7 +79,7 @@ function ImageGrid({ data }) {
                                 alt={alt}
                             />
                             <div className='flex absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 text-center hover:cursor-help justify-center '>
-                                <p className='px-6 pt-6 text-2xl'>{description}</p>
+                                <p className='px-6 pt-6 text-2xl text-white'>{description}</p>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ function ImageGrid({ data }) {
 }
 
 
-export function Galery() {
+export default function Galery() {
     return (
         <ImageGrid data={data} />
     )

@@ -50,7 +50,7 @@ export default function Navigation({ dark, toggleDark }: NavigationProps) {
                 </motion.svg>
             </div>
 
-            <div className='flex py-3 text-center font-light'>
+            <div className='flex py-3 text-center font-light text-sm md:text-xl'>
 
                 <span>
                     You light up my life every day with your love.

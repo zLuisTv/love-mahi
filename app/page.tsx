@@ -6,7 +6,8 @@ import Chronometer from '../components/Home/Time'
 import Galery from '../components/Home/Galery'
 import Navigation from '../components/Home/Navigation'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { getDarkModeFromLocalStorage, setDarkModeToLocalStorage } from '../components/Theme/ThemeUtil';
 
 
 const font_o = Averia_Sans_Libre({
@@ -17,17 +18,27 @@ const font_o = Averia_Sans_Libre({
 const Home: React.FC = () => {
 
 
-  const [dark, setDark] = useState<boolean>(false);
+  const [dark, setDark] = useState<boolean>(getDarkModeFromLocalStorage());
 
   const toggleDarkMode = () => {
-    setDark(!dark);
+    const newDarkMode = !dark;
+    setDark(newDarkMode);
+    setDarkModeToLocalStorage(newDarkMode);
   }
+
+  useEffect(() => {
+    // Actualiza el estado del tema oscuro cuando cambies de página.
+    const storedDarkMode = getDarkModeFromLocalStorage();
+    if (dark !== storedDarkMode) {
+      setDark(storedDarkMode);
+    }
+  }, []);
 
 
   return (
     <main className={` ${dark ? 'dark' : ''} `}>
 
-      <Navigation dark={dark} toggleDark={toggleDarkMode}/> 
+      <Navigation dark={dark} toggleDark={toggleDarkMode} />
 
       <section className='absolute w-full dark:bg-neutral-800 text-white dark:text-black'>
 
@@ -46,11 +57,31 @@ const Home: React.FC = () => {
 
           </div>
 
+          <div className='mt-36 bg-[url("../public/background.jpg")] rounded-xl shadow-md shadow-white hover:shadow-black hover:cursor-pointer dark:shadow-slate-950 dark:hover:shadow-slate-600'>
+            <Link
+              href={"/music"}
+            >
+              <div className='p-4 text-center rounded-xl backdrop-blur-sm'>
+                <svg 
+                width="50px" 
+                height="50px" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M13 12V7V2" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
+                  <circle cx="9" cy="18" r="4" stroke="#1C274C" stroke-width="1.5" />
+                  <path d="M19 8C15.6863 8 13 5.31371 13 2" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+            </Link>
+          </div>
+
         </section>
 
         <section className='flex flex-col mt-14 bg-white items-center dark:bg-neutral-800'>
 
-          <div className='flex text-center bg-gradient-to-b to-sky-100 via-slate-500 from-blue-300 p-4 rounded-xl shadow-md shadow-black dark:shadow-white'>
+          <div className='flex text-center text-black bg-slate-200 p-4 rounded-xl shadow-lg shadow-black dark:shadow-white dark:bg-neutral-800 dark:text-white'>
             <p className={`${font_o.className} text-2xl `}>Every Photo, an Emotion</p>
           </div>
 
@@ -60,15 +91,6 @@ const Home: React.FC = () => {
 
           </div>
 
-          <div className='my-10 bg-[url("../public/bg-player.jpg")] rounded-xl shadow-md shadow-blue-300 hover:shadow-black hover:cursor-pointer dark:shadow-white'>
-            <Link
-              href={"/music"}
-            >
-              <div className='py-3 px-12 my-2 mx-2 text-center rounded-xl backdrop-blur-sm'>
-                <span className='text-2xl font-light'>Reproductor de Música</span>
-              </div>
-            </Link>
-          </div>
 
         </section>
 

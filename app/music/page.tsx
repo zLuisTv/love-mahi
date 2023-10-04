@@ -7,6 +7,7 @@ import ProgressBar from "../../components/Music/ProgressBar";
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from "react";
+import { getDarkModeFromLocalStorage, setDarkModeToLocalStorage } from '../../components/Theme/ThemeUtil';
 
 const boxVariants = {
     checked: { rotateY: 360 },
@@ -50,7 +51,19 @@ const MusicPage: React.FC = () => {
 
     const [currentSong, setCurrentSong] = useState<number>(0);
     const [open, setOpen] = useState<boolean>(false);
-    const [dark, setDark] = useState<boolean>(false);
+    const [dark, setDark] = useState<boolean>(getDarkModeFromLocalStorage());
+    const toggleDarkMode = () => {
+        const newDarkMode = !dark;
+        setDark(newDarkMode);
+        setDarkModeToLocalStorage(newDarkMode);
+    };
+    useEffect(() => {
+        const storedDarkMode = getDarkModeFromLocalStorage();
+        if (dark !== storedDarkMode) {
+            setDark(storedDarkMode);
+        }
+    }, []);
+
     const [playPause, setPlayPause] = useState(false);
     const [repeatSong, setRepeatSong] = useState<boolean>(false);
     const [duration, setDuration] = useState<number>();
@@ -62,7 +75,7 @@ const MusicPage: React.FC = () => {
         const currentTime = audioPlayer.current?.currentTime;
         setTime(currentTime);
         if (duration) {
-            if(progressBarRef.current.value === null) return;
+            if (progressBarRef.current.value === null) return;
 
             progressBarRef.current.value = currentTime;
             progressBarRef.current.style.setProperty(
@@ -104,7 +117,7 @@ const MusicPage: React.FC = () => {
     };
 
     return (
-        <div className={`${dark && "dark"}`}>
+        <div className={`${dark ? 'dark' : ''}`}>
             <audio
                 ref={audioPlayer}
                 src={playingList[currentSong].srcMusic}
@@ -129,7 +142,7 @@ const MusicPage: React.FC = () => {
                 className='fixed inset-x-0 top-0 flex flex-col items-center rounded-b-[50px] border-x border-b border-white bg-white bg-opacity-30 pb-8 backdrop-blur-sm dark:bg-black dark:border-none dark:bg-opacity-70 md:pb-4'
             >
                 <div className='flex w-full items-center justify-between px-7 py-2'>
-                    <div onClick={() => location.href='/'} className='borderGeradiant flex h-14 w-14 items-center justify-center rounded-full bg-white bg-opacity-50 backdrop-blur-sm hover:cursor-pointer'>
+                    <div onClick={() => location.href = '/'} className='borderGeradiant flex h-14 w-14 items-center justify-center rounded-full bg-white bg-opacity-50 backdrop-blur-sm hover:cursor-pointer'>
                         <svg
                             width="26"
                             height="26"
@@ -150,7 +163,7 @@ const MusicPage: React.FC = () => {
                     </div>
 
                     <div
-                        onClick={() => setDark(!dark)}
+                        onClick={toggleDarkMode}
                         className='borderGeradiant flex h-14 w-14 items-center justify-center rounded-full bg-white bg-opacity-50 backdrop-blur-sm hover:cursor-pointer'
                     >
                         <motion.svg
